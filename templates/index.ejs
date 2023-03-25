@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <form method="post" action="" enctype="form-data">
+    
+            App <input type="text" placeholder="App name" name="App" value=<%=OriginalData%>><br><br>
+            
+            <div id="people-container"></div><br>
+    
+            <input type="button" value="Add new Key" onclick="msg()">
+            <button>submit</button>
+    
+        </form>
+    
+        <script>
+    
+            let i = 1;
+            let j = 1;
+        function msg() {
+            
+            const element = document.getElementById("demo");
+        if(element){
+            element.remove();
+        }
+    
+            let template = `
+            Key ${i} : <input name="Key${i}" type="text" placeholder="KeyName" value="" required><div id="Value${i}"></div> <input type="button" value="Add Value" onclick="msg2()">`;
+    
+            let container = document.getElementById('people-container');
+        let div = document.createElement('div');
+        div.innerHTML = template;
+    
+        container.appendChild(div);
+    
+    
+        i++;
+        j =  1 ;
+    }
+    
+    function msg2() {
+
+            document.getElementById(`Value${i-1}`);
+
+            let template = `
+            Value ${j} : <input name="Value${i-1}" type="text" placeholder="Value${j}" value="" required>`;
+    
+            let container = document.getElementById(`Value${i-1}`);
+            let div = document.createElement('div');
+            div.innerHTML = template;
+    
+            container.appendChild(div);
+
+            j++;
+    }
+
+        </script>
+    
+</body>
+</html>

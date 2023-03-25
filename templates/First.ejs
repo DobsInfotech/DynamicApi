@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Here I have taken the test as id</h1>
+
+  <%if (OriginalData.length > 1) { %>
+
+    <h2>similarly we can replace id with
+
+      <% for(var i=1; i<OriginalData.length; i++) {%>
+
+       <% if(i <= 1){ %>
+        <%= OriginalData[i].Data.App[0]%>
+       <% } else{ %>
+         , <%= OriginalData[i].Data.App[0]%>
+      <% } %>
+
+      <% } %>
+
+     </h2>
+
+  <% } %>
+
+<table id="customers">
+  <tr>
+    <th>Route</th>
+    <th>Method</th>
+    <th></th>
+  </tr>
+ <tr>
+    <td>Show</td>
+    <td>Get</td>
+    <td><a style="color:black; text-decoration: none;" href="Show">For Show All Upi Data With App Name</a></td>
+  </tr>
+  <tr>
+    <td>id/data</td>
+    <td>Get</td>
+    <td><a style="color:black; text-decoration: none;"  href="test/data">For Get Upi Data</a></td>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td>post</td>
+    <td><a style="color:black; text-decoration: none;" href="test">For Update Upi data</a></td>
+  </tr>
+</table>
+
+
+</body>
+</html>
+<!DOCTYPE html>
